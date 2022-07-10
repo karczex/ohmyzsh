@@ -36,7 +36,7 @@ function git_prompt_info() {
 function parse_git_dirty() {
   local STATUS
   local -a FLAGS
-  FLAGS=('--porcelain')
+  FLAGS=('--porcelain' '--no-ahead-behind')
   if [[ "$(__git_prompt_git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
     if [[ "${DISABLE_UNTRACKED_FILES_DIRTY:-}" == "true" ]]; then
       FLAGS+='--untracked-files=no'
